@@ -28,24 +28,3 @@ const score = (fighter1, fighter2) => {
 
 
 
-// Let's fight !!!
-{
-    let round = 0;
-
-    while (heracles.isAlive() && nemean.isAlive()) {
-        console.log(`🕛 Round #${round}`);
-
-        heracles.fight(nemean);
-        console.log(roundDisplay(heracles, nemean));
-
-        nemean.fight(heracles);
-        console.log(roundDisplay(nemean, heracles));
-
-        round++;
-    }
-
-    const result = score(heracles, nemean);
-
-    console.log(`💀 ${result.loser.name} is dead`);
-    console.log(`🏆 ${result.winner.name} wins (💙 ${result.winner.life} )`);
-}
