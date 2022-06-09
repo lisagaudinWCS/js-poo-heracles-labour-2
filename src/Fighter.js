@@ -9,7 +9,7 @@ class Fighter {
         this.dexterity = dexterity;
         this.life = MAX_LIFE;
         this.weapon = null;
-        this.shield = shield
+        this.shield = null;
     }
 
 
@@ -17,7 +17,7 @@ class Fighter {
     fight(defender) {
         const attackPoints = this.getRandomInt(this.getDamage());
 
-        const damages = Math.max(attackPoints - defender.dexterity, 0);
+        const damages = Math.max(attackPoints - this.getDefense(), 0);
 
         defender.life = Math.max(defender.life - damages, 0);
     }
@@ -35,7 +35,11 @@ class Fighter {
     }
 
     getDamage() {
-        return this.strength + this.weapon
+        return this.strength + this.weapon;
+    }
+
+    getDefense() {
+        return this.dexterity + this.shield;
     }
 }
 
