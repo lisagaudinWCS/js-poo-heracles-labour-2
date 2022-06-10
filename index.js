@@ -3,14 +3,16 @@ const Weapon = require("./src/Weapon.js");
 const Shield = require("./src/Shield.js");
 
 /**Create accessories*/
-const sword = new Weapon ("Epée", 10);
-const shield = new Shield ("Bouclier", 10);
+const sword = new Weapon ("Epée");
+const shield = new Shield ("Bouclier");
 
 /** Create Heracles  */
 const heracles = new Fighter("🧔 Heracles", 20, 6, sword, shield);
+console.log(heracles);
 
 /** Create the opponent  */
 const boar = new Fighter("🐗 Erymanthian Boar", 25, 12);
+console.log(boar);
 
 /**
  * Helper to produce the result of a round
